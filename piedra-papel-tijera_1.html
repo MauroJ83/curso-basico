@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!--Indica el tipo de documento-->
+<html>
+  <head>
+    <meta charset="utf-8" /> <!--Indica el estandar de caracteres a utilizar-->
+    <title>Mi primer juego - PPT</title>
+    
+    <script>
+      //Opciones: 1 para Piedra, 2 para Papel y 3 para Tijera
+
+      //Declaración de variables
+      let jugador = 0 //variable inicializada en 0
+      let pc = 0 //variable inicializada en 0 
+
+      //Permitir que el jugador elija su opción
+      jugador = prompt("Elige tu opción favorita:\n-1 para Piedra (🥌),\n-2 para Papel (📰) ó,\n-3 para Tijera (✂)")
+
+      //Mostrar resultado de la opción elegida
+      if (jugador == 1) {
+        alert("Elegiste 🥌")
+      } else if (jugador == 2) {
+        alert("Elegiste 📰")
+      } else if (jugador == 3) {
+        alert("Elegiste ✂")
+      } else {
+        alert("Parece que no quieres jugar 😒, elige una opción válida")
+      }
+
+      //PC genera su opción de forma aleatoria
+      //Declaro variables que usara PC para elegir
+      let min = 1
+      let max = 3
+      pc = Math.floor(Math.random()*(max-min+1) + min) //numero aleatorio sin decimales, entre 1 y 3
+      if (pc == 1) { // mostrar resultado de lo que pc eligió
+        alert("PC eligió 🥌")
+      } else if (pc == 2) {
+        alert("PC eligió 📰")
+      } else {
+        alert("PC eligió ✂")
+      }
+
+      //Combate
+      if (pc == jugador) {
+        alert("¡EMPATE!")
+      } else if (jugador == 1 && pc == 3) {
+        alert("¡Felicitaciones Jugador, GANASTE! 🎉")
+      } else if (jugador == 2 && pc == 1) {
+        alert("¡Felicitaciones Jugador, GANASTE! 🎉")
+      } else if (jugador == 3 && pc == 2) {
+        alert("¡Felicitaciones Jugador, GANASTE! 🎉")
+      } else {
+        alert("Jugador mejor suerte la próxima, PERDISTE 😢")
+      }
+
+      //Los condicionales para la elección del jugador y de la pc, son muy similares, por lo que sera valioso resumirlo en un solo bloque.
+      //También resultará valioso incluir varias rondas, contabilizar las victorias, derrotas, empates y mostrar el resultado final en pantalla.
+      //Esto lo procesaremos en un nuevo archivo para separar este código básico, ya que lo modificaremos para las nuevas funcionalidades.
+
+    </script>
+
+  </head>
+  <body>
+    <h1>Juega Piedra, Papel o Tijera</h1>
+  </body>
+ </html>
